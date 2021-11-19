@@ -12,7 +12,7 @@ jobs:
     name: 42valgrind
     steps:
     - uses: actions/checkout@v2
-	- name: 42valgrind Leak checker
+    - name: 42valgrind Leak checker
       uses: solareenlo/42valgrind-action@v1.0.0
       with:
         flags: ''
