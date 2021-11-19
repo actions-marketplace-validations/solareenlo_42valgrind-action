@@ -17,4 +17,4 @@ runs:
   entrypoint: /bin/bash
   args:
     - -c
-    - valgrind --leak-check=full --show-leak-kinds=all ${{ inputs.flags }}
+    - ${{ inputs.flags }}
