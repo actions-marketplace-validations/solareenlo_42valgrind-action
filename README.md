@@ -7,7 +7,7 @@ This GitHub Action checks if your code passes valgrind leak checker, after each 
 on: [push, pull_request]
 
 jobs:
-  norminette_job:
+  valgrind:
     runs-on: ubuntu-latest
     name: 42valgrind
     steps:
