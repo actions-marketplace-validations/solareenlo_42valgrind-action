@@ -1,0 +1,19 @@
+name: '42valgrind Leak checker'
+author: 'solareenlo'
+description: 'Run valgrind on ubuntu-latest'
+branding:
+  icon: 'play-circle'
+  color: 'green'
+
+inputs:
+  args:
+    description: 'Args passed to valgrind'
+    required: true
+    default: ''
+runs:
+  using: 'docker'
+  image: 'docker://solareenlo/42valgrind:latest'
+  entrypoint: /bin/bash
+  args:
+    - -c
+    - valgrind --leak-check=full --show-leak-kinds=all ./a.out ${{ inputs.args }}
