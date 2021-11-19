@@ -9,11 +9,12 @@ inputs:
   flags:
     description: 'Flags passed to valgrind'
     required: true
-    default: ''
+    default: '.'
+
 runs:
   using: 'docker'
   image: 'docker://solareenlo/42valgrind:latest'
   entrypoint: /bin/bash
-  flags:
+  args:
     - -c
     - valgrind --leak-check=full --show-leak-kinds=all ${{ inputs.flags }}
