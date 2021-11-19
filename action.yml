@@ -6,14 +6,14 @@ branding:
   color: 'green'
 
 inputs:
-  args:
-    description: 'Args passed to valgrind'
+  flags:
+    description: 'Flags passed to valgrind'
     required: true
     default: ''
 runs:
   using: 'docker'
   image: 'docker://solareenlo/42valgrind:latest'
   entrypoint: /bin/bash
-  args:
+  flags:
     - -c
-    - valgrind --leak-check=full --show-leak-kinds=all ./a.out ${{ inputs.args }}
+    - valgrind --leak-check=full --show-leak-kinds=all ${{ inputs.flags }}

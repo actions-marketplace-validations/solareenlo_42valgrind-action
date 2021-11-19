@@ -15,7 +15,7 @@ jobs:
     - name: 42valgrind Leak checker
       uses: solareenlo/42valgrind-action@v1.0.0
       with:
-        flags: ''
+        flags: './a.out'
 ```
 
 ## References
