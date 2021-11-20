@@ -4,6 +4,7 @@ This GitHub Action checks if your code passes valgrind leak checker, after each 
 ## Usage
 ```yml
 # .github/workflows/valgrind.yml
+name: <workflow-name>
 on: [push, pull_request]
 
 jobs:
@@ -15,7 +16,12 @@ jobs:
     - name: 42valgrind Leak checker
       uses: solareenlo/42valgrind-action@v1.0.0
       with:
-        flags: './a.out'
+        flags: 'sh test_valgrind.sh'
+```
+
+And, you may choose to add a badge to your repo by adding the below to your `README.md`:
+```markdown
+![](https://github.com/<username>/<remote-name>/workflows/<workflow-name>/badge.svg)
 ```
 
 ## References
